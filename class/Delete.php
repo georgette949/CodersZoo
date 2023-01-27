@@ -4,34 +4,33 @@ require "ClassZoo.php";
 
 class Delete extends ClassZoo {
 // Atributos
-   public  $servername = "localhost/coderszoo";
+   public  $servername = "localhost";
+   public  $username = "root";
+   public $password = "";
    public  $dbname = "coderszoo";
-
+  
 // atri-metodo
-   public $conn = new mysqli($servername, $dbname);
+   public $enlace = mysqli_connect($servername, $username, $password, $dbname);
+
 
 // metodo
    public function checkConnection(){
-     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        }
-        echo "Connected successfully";
-    }  
-    
-   //metodo
-  public function delete($bdname, $nombre, $status){
-
-    public function __construct($db_connection)
-    {
-        $this -> db = $db_connection;
+    if (mysqli_connect_errno()) {
+        printf("Falló la conexión: %s\n", mysqli_connect_error());
+        exit();
     }
-    }
+}
 
     //metodo
     public function delete($nombre) {
-        $query = "DELETE FROM coderszoofood WHERE Nombre = $nombre";
-    } 
+         $mysqli = new mysqli();
+         $consulta = "DELETE FROM coderszoofood WHERE Nombre = $nombre ";
+         $sentencia = $mysqli->prepare($consulta);
+        echo "$nombre ha sido eliminado";
+    }
+    
 
+  
 }
 
 
