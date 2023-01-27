@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-01-2023 a las 09:50:59
+-- Tiempo de generación: 27-01-2023 a las 11:50:42
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `coderszoo`
 --
+CREATE DATABASE IF NOT EXISTS `coderszoo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `coderszoo`;
 
 -- --------------------------------------------------------
 
